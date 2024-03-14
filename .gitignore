@@ -1,0 +1,4 @@
+foo/bazel-*
+bar/bazel-*
+bar/external
+bar/compile_commands.json
