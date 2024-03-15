@@ -23,7 +23,12 @@ hedron_compile_commands_setup_transitive_transitive()
 load("@hedron_compile_commands//:workspace_setup_transitive_transitive_transitive.bzl", "hedron_compile_commands_setup_transitive_transitive_transitive")
 hedron_compile_commands_setup_transitive_transitive_transitive()
 
-local_repository(
+# load dependencies
+
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
+
+new_git_repository(
     name = "foo",
-    path = "../foo",
+    remote = "https://github.com/modatwork/bazel-example-lib.git",
+    commit = "7be1ec89e7f249321aeab87b8e9bed2c5aa01886",
 )
